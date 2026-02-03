@@ -1,102 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Parallax Scrolling Website</title>
+<meta charset="UTF-8">
+<title>Parallax Scrolling with Flowing Text</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+<style>
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  overflow-x: hidden;
+}
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+.parallax {
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
-            color: white;
-        }
+.img1 { background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2400&q=80"); }
+.img2 { background-image: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=2400&q=80"); }
+.img3 { background-image: url("https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=2400&q=80"); }
 
-        .parallax {
-            position: relative;
-            height: 100vh;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
+.text-container {
+  position: sticky;
+  top: 20vh; /* magasság, ahol ragad a szöveg */
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 10;
+}
 
-            .overlay {
-                background: none;
-                padding: 0;
-                max-width: 900px;
-            }
+h1, h2, p {
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+  margin-bottom: 20px;
+}
 
-
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-
-        p {
-            font-size: 1.3rem;
-            line-height: 1.8;
-        }
-
-        .img1 {
-            background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2400&q=80");
-        }
-
-        .img2 {
-            background-image: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=2400&q=80");
-        }
-
-        .footer {
-            height: 50vh;
-            background-image: url("https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=2400&q=80");
-        }
-    </style>
+section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>
 </head>
 <body>
 
-    <div class="parallax img1">
-        <div class="overlay">
-            <h1>Parallax Scrolling Website</h1>
-            <p>
-                This website demonstrates a modern parallax scrolling effect,
-                where background images move at a different speed than the foreground content.
-                This technique creates depth and a visually engaging user experience.
-            </p>
-        </div>
-    </div>
+<div class="parallax img1"></div>
 
-    <div class="parallax img2">
-        <div class="overlay">
-            <h2>How Parallax Works</h2>
-            <p>
-                Parallax scrolling is achieved using CSS background-attachment properties.
-                As the user scrolls, the background remains fixed while the content moves,
-                creating a smooth and immersive visual illusion.
-            </p>
-        </div>
-    </div>
+<section>
+  <div class="text-container">
+    <h1>Parallax Scrolling Website</h1>
+    <p>
+      This is a flowing text example. As you scroll, the text moves smoothly over multiple parallax backgrounds.
+      It creates a continuous storytelling effect, keeping the content visually engaging.
+    </p>
+  </div>
+</section>
 
-    <div class="parallax footer">
-        <div class="overlay">
-            <h2>Project Information</h2>
-            <p>
-                Created by <strong>Adam Fekecs</strong><br>
-                Parallax Scrolling Website Project
-            </p>
-        </div>
-    </div>
+<div class="parallax img2"></div>
+
+<section>
+  <div class="text-container">
+    <h2>How Parallax Works</h2>
+    <p>
+      Parallax scrolling keeps background images fixed while the text scrolls. Here, the text continues to flow
+      over each image, giving a seamless visual effect without breaking the content into separate boxes.
+    </p>
+  </div>
+</section>
+
+<div class="parallax img3"></div>
+
+<section>
+  <div class="text-container">
+    <h2>Project Info</h2>
+    <p>
+      Created by <strong>Adam Fekecs</strong>. This modern parallax design showcases smooth scrolling text
+      over high-resolution images.
+    </p>
+  </div>
+</section>
 
 </body>
 </html>
